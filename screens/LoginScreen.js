@@ -1,7 +1,7 @@
 import {KeyboardAvoidingView, StyleSheet, Text, View} from 'react-native';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
-import {auth} from '../firebase';
+import {auth} from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
 
 const LoginScreen = () => {
@@ -9,7 +9,7 @@ const LoginScreen = () => {
   const [password, setPassword] = useState('');
 
   const navigation = useNavigation();
-
+  // navigate if logged in
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
