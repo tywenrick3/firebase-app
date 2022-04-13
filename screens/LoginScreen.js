@@ -109,14 +109,14 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#0782F9',
     width: '100%',
-    padding: 15,
+    padding: 10,
     marginBottom: 5,
     borderRadius: 10,
   },
   buttonText: {
     color: 'white',
     fontWeight: '700',
-    fontSize: 16,
+    fontSize: 14,
   },
   buttonOutline: {
     backgroundColor: 'white',
@@ -127,6 +127,6 @@ const styles = StyleSheet.create({
   buttonOutlineText: {
     color: 'white',
     fontWeight: '700',
-    fontSize: 16,
+    fontSize: 14,
   },
 });
