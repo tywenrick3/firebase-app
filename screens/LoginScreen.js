@@ -1,17 +1,27 @@
 import {KeyboardAvoidingView, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
-import {auth} from '@react-native-firebase/auth';
+import auth from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  // const [initializing, setInitializing] = useState(true);
+  // const [user, setUser] = useState();
+
   const navigation = useNavigation();
+
+  // // Handle user state changes
+  // function onAuthStateChanged(user) {
+  //   setUser(user);
+  //   if (initializing) setInitializing(false);
+  // }
+
   // navigate if logged in
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(user => {
+    const unsubscribe = auth().onAuthStateChanged(user => {
       if (user) {
         navigation.navigate('Home');
       }
@@ -20,7 +30,7 @@ const LoginScreen = () => {
   }, []);
 
   const handleSignUp = () => {
-    auth
+    auth()
       .createUserWithEmailAndPassword(email, password)
       .then(userCreds => {
         const user = userCreds.user;
@@ -30,10 +40,13 @@ const LoginScreen = () => {
   };
 
   const handleLogin = () => {
-    auth.signInWithEmailAndPassword(email, password).then(userCreds => {
-      const user = userCreds.user;
-      console.log('Logged in with: ', user.email);
-    });
+    auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(userCreds => {
+        const user = userCreds.user;
+        console.log('Logged in with: ', user.email);
+      })
+      .catch(error => alert(error.message));
   };
 
   return (
@@ -55,13 +68,13 @@ const LoginScreen = () => {
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={handleLogin} style={styles.button}>
-          <Text style={styles.buttonText}>Login</Text>
+          <Text style={styles.buttonText}> Login </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.button, styles.buttonOutline]}
           onPress={handleSignUp}
           style={styles.button}>
-          <Text style={styles.buttonOutlineText}>Register</Text>
+          <Text style={styles.buttonOutlineText}>Sign up</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
@@ -87,15 +100,17 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   buttonContainer: {
-    width: '60%',
+    width: '50%',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 40,
+    marginBottom: 10,
   },
   button: {
     backgroundColor: '#0782F9',
     width: '100%',
     padding: 15,
+    marginBottom: 5,
     borderRadius: 10,
   },
   buttonText: {
@@ -110,7 +125,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   buttonOutlineText: {
-    color: '#0782F9',
+    color: 'white',
     fontWeight: '700',
     fontSize: 16,
   },

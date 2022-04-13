@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import React from 'react';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
@@ -14,14 +14,14 @@ const HomeScreen = () => {
       <View>
         <Text style={{fontSize: 30, fontWeight: 'bold'}}>Welcome</Text>
       </View>
-      <TouchableOpacity style={{backgroundColor: '#CCC'}}>
+      {/* <TouchableOpacity style={{backgroundColor: '#CCC'}}>
         <Text style={{fontSize: 18, fontWeight: 'bold', color: '#FFF'}}>
           Lets Begin
         </Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <View styles={styles.container}>
-        <Text>Email: {}</Text>
-        <TouchableOpacity style={styles.button}>
+        <Text styles={styles.emailText}>Email: {}</Text>
+        <TouchableOpacity style={styles.button} onPress={() => {}}>
           <Text style={styles.buttonText}>Sign Out</Text>
         </TouchableOpacity>
       </View>
@@ -40,12 +40,15 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: '#0782F9',
     width: '100%',
-    padding: 15,
+    padding: 10,
     borderRadius: 10,
   },
   buttonText: {
     color: 'white',
     fontWeight: '700',
     fontSize: 16,
+  },
+  emailText: {
+    fontSize: 10,
   },
 });
