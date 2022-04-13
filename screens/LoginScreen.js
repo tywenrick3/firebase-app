@@ -8,16 +8,7 @@ const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // const [initializing, setInitializing] = useState(true);
-  // const [user, setUser] = useState();
-
   const navigation = useNavigation();
-
-  // // Handle user state changes
-  // function onAuthStateChanged(user) {
-  //   setUser(user);
-  //   if (initializing) setInitializing(false);
-  // }
 
   // navigate if logged in
   useEffect(() => {

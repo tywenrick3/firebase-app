@@ -1,8 +1,20 @@
 import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import React from 'react';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import auth from '@react-native-firebase/auth';
+import {useNavigation} from '@react-navigation/native';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
+  const handleSignOut = () => {
+    auth()
+      .signOut()
+      .then(() => {
+        navigation.replace('Login');
+      })
+      .catch(error => alert(error.message));
+  };
+
   return (
     <SafeAreaView
       style={{
@@ -14,14 +26,10 @@ const HomeScreen = () => {
       <View>
         <Text style={{fontSize: 30, fontWeight: 'bold'}}>Welcome</Text>
       </View>
-      {/* <TouchableOpacity style={{backgroundColor: '#CCC'}}>
-        <Text style={{fontSize: 18, fontWeight: 'bold', color: '#FFF'}}>
-          Lets Begin
-        </Text>
-      </TouchableOpacity> */}
+
       <View styles={styles.container}>
-        <Text styles={styles.emailText}>Email: {}</Text>
-        <TouchableOpacity style={styles.button} onPress={() => {}}>
+        <Text styles={styles.emailText}>{auth().currentUser?.email}</Text>
+        <TouchableOpacity style={styles.button} onPress={handleSignOut}>
           <Text style={styles.buttonText}>Sign Out</Text>
         </TouchableOpacity>
       </View>
@@ -49,6 +57,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   emailText: {
-    fontSize: 10,
+    fontSize: 12,
   },
 });
