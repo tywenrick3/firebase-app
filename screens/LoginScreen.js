@@ -35,6 +35,7 @@ const LoginScreen = () => {
       console.log('Logged in with: ', user.email);
     });
   };
+
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <View style={styles.inputContainer}>
