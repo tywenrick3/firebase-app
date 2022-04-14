@@ -42,16 +42,21 @@ const LoginScreen = () => {
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
+      <View style={styles.titleContainer}>
+        <Text style={styles.titleText}>reps</Text>
+      </View>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
           placeholder="Email"
+          selectionColor={'#A0ED7B'}
           value={email}
           onChangeText={text => setEmail(text)}
         />
         <TextInput
           style={styles.input}
           placeholder="Password"
+          selectionColor={'#A0ED7B'}
           value={password}
           onChangeText={text => setPassword(text)}
           secureTextEntry
@@ -98,7 +103,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   button: {
-    backgroundColor: '#0782F9',
+    backgroundColor: '#A0ED7B',
     width: '100%',
     padding: 10,
     marginBottom: 5,
@@ -112,12 +117,22 @@ const styles = StyleSheet.create({
   buttonOutline: {
     backgroundColor: 'white',
     marginTop: 5,
-    borderColor: '#0782F9',
+    borderColor: '#A0ED7B',
     borderWidth: 2,
   },
   buttonOutlineText: {
     color: 'white',
     fontWeight: '700',
     fontSize: 14,
+  },
+  titleContainer: {
+    backgroundColor: '#A0ED7B',
+    borderRadius: 10,
+    marginBottom: 20,
+  },
+  titleText: {
+    padding: 15,
+    fontSize: 32,
+    color: 'white',
   },
 });
