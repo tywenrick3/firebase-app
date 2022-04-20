@@ -2,6 +2,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Tabs from './Tabs';
 import LoginScreen from '../screens/LoginScreen';
+import HomeScreen from '../screens/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,9 +15,9 @@ const ScreenStack = () => {
         component={LoginScreen}
       />
       <Stack.Screen
-        name="Tabs"
+        name="Home"
         options={{headerShown: false}}
-        component={Tabs}
+        component={HomeScreen}
       />
     </Stack.Navigator>
   );
