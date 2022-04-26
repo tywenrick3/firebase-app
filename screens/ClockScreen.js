@@ -1,14 +1,19 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import React from 'react';
+import StopWatch from '../components/Stopwatch';
 
 const ClockScreen = () => {
   return (
-    <View>
-      <Text>ClockScreen</Text>
+    <View style={styles.container}>
+      <StopWatch />
     </View>
   );
 };
 
-export default ClockScreen;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
-const styles = StyleSheet.create({});
+export default ClockScreen;
