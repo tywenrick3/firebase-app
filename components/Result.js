@@ -23,14 +23,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignContent: 'center',
-    //borderBottomWidth: 2,
     borderColor: '#313131',
     height: 50,
     paddingHorizontal: 15,
     paddingVertical: 15,
   },
   resultItemText: {
-    color: '#CCC',
+    color: 'black',
     fontWeight: 'bold',
   },
 });
