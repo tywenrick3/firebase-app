@@ -24,11 +24,11 @@ function ClockControl({
       <TouchableOpacity
         style={[
           styles.controlButtonBorder,
-          {backgroundColor: isRunning ? '340e0d' : '0a2a12'},
+          {backgroundColor: isRunning ? '#FF3131' : '#A0ED7B'},
         ]}
         onPress={handleRightButtonPress}>
         <View style={styles.controlButton}>
-          <Text style={{color: isRunning ? '#ea4c49' : '#37d05c'}}>
+          <Text style={{color: isRunning ? 'white' : 'black'}}>
             {isRunning ? 'Stop' : 'Start'}
           </Text>
         </View>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     height: 65,
     borderRadius: 65,
     borderColor: '#000',
-    borderWidth: 1,
+    //borderWidth: 1,
   },
 });
 
