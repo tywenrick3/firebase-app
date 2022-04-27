@@ -13,7 +13,7 @@ export const displayTime = centiseconds => {
   }
 
   let remainingCenti = centiseconds % 100;
-  seconds = centiseconds - remainingCenti;
+  seconds = (centiseconds - remainingCenti) / 100;
 
   if (seconds < 60) {
     return `00:${padToTwo(seconds)}:${padToTwo(remainingCenti)}`;
@@ -22,5 +22,7 @@ export const displayTime = centiseconds => {
   let remainingSec = seconds % 60;
   minutes = (seconds - remainingSec) / 60;
 
-  return `${padToTwo(minutes)}:${padToTwo(remainingSec)}:${remainingCenti}`;
+  return `${padToTwo(minutes)}:${padToTwo(remainingSec)}:${padToTwo(
+    remainingCenti,
+  )}`;
 };

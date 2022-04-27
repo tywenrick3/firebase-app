@@ -23,12 +23,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignContent: 'center',
-    borderBottomWidth: 1,
+    //borderBottomWidth: 2,
     borderColor: '#313131',
     height: 50,
     paddingHorizontal: 15,
+    paddingVertical: 15,
   },
-  resultItemText: {color: '#fff'},
+  resultItemText: {
+    color: '#CCC',
+    fontWeight: 'bold',
+  },
 });
 
 export default React.memo(Result);

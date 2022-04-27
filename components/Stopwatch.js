@@ -5,6 +5,7 @@ import Constants from 'expo-constants';
 import Result from './Result';
 import ClockControl from './ClockControl';
 import {displayTime} from './util';
+import {ScrollView} from 'react-native-gesture-handler';
 
 export default function StopWatch() {
   const [time, setTime] = useState(0);
@@ -46,9 +47,9 @@ export default function StopWatch() {
           handleRightButtonPress={handleRightButtonPress}
         />
       </View>
-      <View style={styles.result}>
+      <ScrollView style={styles.result}>
         <Result results={results} />
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -56,7 +57,6 @@ export default function StopWatch() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
     paddingTop: Constants.statusBarHeight,
   },
   display: {
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   displayText: {
-    color: '#fff',
+    color: '#A0ED7B',
     fontSize: 70,
     fontWeight: '200',
     fontFamily: Platform.OS === 'ios' ? 'Helvetica Neue' : null,

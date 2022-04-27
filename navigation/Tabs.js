@@ -24,7 +24,7 @@ const Tabs = () => {
           }
           return <IonIcon name={iconName} size={size} color={color} />;
         },
-        headerShown: route.name != 'Home',
+        headerShown: false,
         tabBarActiveTintColor: '#A0ED7B',
         tabBarInactiveTintColor: 'gray',
       })}>
