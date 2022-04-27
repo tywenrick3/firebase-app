@@ -23,18 +23,16 @@ const HomeScreen = () => {
         alignItems: 'center',
         backgroundColor: '#FFF',
       }}>
-      <View>
-        <Text style={{fontSize: 30, fontWeight: 'bold'}}>Welcome</Text>
+      <View style={{padding: 15}}>
+        <Text style={{fontSize: 30, fontWeight: 'bold'}}>Hello</Text>
       </View>
 
-      <View styles={styles.container}>
-        <View styles={styles.emailContainer}>
-          <Text styles={styles.emailText}>{auth().currentUser?.email}</Text>
-        </View>
-        <TouchableOpacity style={styles.button} onPress={handleSignOut}>
-          <Text style={styles.buttonText}>Sign Out</Text>
-        </TouchableOpacity>
+      <View style={styles.emailContainer}>
+        <Text style={styles.emailText}>User: {auth().currentUser?.email}</Text>
       </View>
+      <TouchableOpacity style={styles.button} onPress={handleSignOut}>
+        <Text style={styles.buttonText}>Sign Out</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -42,15 +40,10 @@ const HomeScreen = () => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   button: {
     backgroundColor: '#A0ED7B',
     width: '100%',
-    padding: 10,
+    padding: 15,
     borderRadius: 10,
   },
   buttonText: {
@@ -59,7 +52,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   emailContainer: {
-    backgroundColor: '#A0ED7B',
+    padding: 15,
   },
   emailText: {
     fontSize: 16,
