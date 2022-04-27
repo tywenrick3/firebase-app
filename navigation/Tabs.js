@@ -23,6 +23,10 @@ const Tabs = () => {
           }
           return <IonIcon name={iconName} size={size} color={color} />;
         },
+        tabBarStyle: {
+          position: 'absolute',
+          backgroundColor: 'white',
+        },
         headerShown: false,
         tabBarShowLabel: false,
         tabBarActiveTintColor: '#A0ED7B',
