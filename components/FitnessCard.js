@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     height: 125,
     borderRadius: 25,
     borderColor: '#A0ED7B',
+    backgroundColor: '#FBF6EE',
     borderWidth: 3,
     flexDirection: 'row',
   },
