@@ -1,19 +1,18 @@
 import {StyleSheet, Text, View, Dimensions} from 'react-native';
 import React from 'react';
+import {useState, useEffect} from 'react';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 IonIcon.loadFont();
 
-const FitnessCard = () => {
+const FitnessCard = ({date, title, info}) => {
   // what I want to be passed in
-  const title = '';
-  const date = '';
 
   return (
     <View style={styles.cardContainer}>
       <View style={styles.infoContainer}>
-        <Text style={styles.titleText}>Bench Press</Text>
-        <Text style={styles.dataText}>{225} lbs</Text>
-        <Text style={styles.dateText}>date</Text>
+        <Text style={styles.titleText}>{title}</Text>
+        <Text style={styles.dataText}>{info} lbs</Text>
+        <Text style={styles.dateText}>{date}</Text>
       </View>
       <View style={styles.iconContainer}>
         <IonIcon name="podium-outline" size={60} color={'#A0ED7B'} />

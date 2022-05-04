@@ -9,19 +9,38 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import Card from '../components/FitnessCard';
 import IonIcon from 'react-native-vector-icons/Ionicons';
+import {ScrollView} from 'react-native-gesture-handler';
 IonIcon.loadFont();
 
 const FitnessScreen = () => {
   const [cards, setCards] = useState([]);
+  const [date, setDate] = useState(null);
+  useEffect(() => {
+    let today = new Date();
+    let date =
+      today.getFullYear() +
+      '-' +
+      (today.getMonth() + 1) +
+      '-' +
+      today.getDate();
+    setDate(date);
+  }, []);
 
-  const handleAddFitness = () => {};
+  const handleAddFitness = () => {
+    console.log('Add Button Pressed');
+  };
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity onPress={() => {}} style={styles.button}>
+      <TouchableOpacity onPress={handleAddFitness} style={styles.button}>
         <IonIcon name={'add-circle-outline'} size={50} color={'#A0ED7B'} />
       </TouchableOpacity>
-      <Card />
+      <ScrollView style={styles.cards}>
+        {cards.map((card, i) => (
+          <Card />
+        ))}
+        <Card date={date} title={'Bench-Press'} info={'225'} />
+      </ScrollView>
     </SafeAreaView>
   );
 };
