@@ -10,9 +10,12 @@ import {useState, useEffect} from 'react';
 import Card from '../components/FitnessCard';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import {ScrollView} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 IonIcon.loadFont();
 
 const FitnessScreen = () => {
+  const navigation = useNavigation();
+
   const [cards, setCards] = useState([]);
   const [title, setTitle] = useState('');
   const [info, setInfo] = useState('');
