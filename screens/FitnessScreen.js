@@ -14,7 +14,10 @@ IonIcon.loadFont();
 
 const FitnessScreen = () => {
   const [cards, setCards] = useState([]);
+  const [title, setTitle] = useState('');
+  const [info, setInfo] = useState('');
   const [date, setDate] = useState(null);
+
   useEffect(() => {
     let today = new Date();
     let date =
@@ -24,6 +27,9 @@ const FitnessScreen = () => {
       '-' +
       today.getDate();
     setDate(date);
+    // test info
+    setTitle('Bench Press');
+    setInfo('225 lbs');
   }, []);
 
   const handleAddFitness = () => {
@@ -39,7 +45,12 @@ const FitnessScreen = () => {
         {cards.map((card, i) => (
           <Card />
         ))}
-        <Card date={date} title={'Bench-Press'} info={'225'} />
+        <Card
+          date={date}
+          title={title}
+          info={info}
+          iconName={'podium-outline'}
+        />
       </ScrollView>
     </SafeAreaView>
   );
