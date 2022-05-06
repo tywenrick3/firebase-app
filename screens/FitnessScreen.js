@@ -54,6 +54,18 @@ const FitnessScreen = () => {
           info={info}
           iconName={'podium-outline'}
         />
+        <Card
+          date={date}
+          title={'Body Weight'}
+          info={'155 lbs'}
+          iconName={'body-outline'}
+        />
+        <Card
+          date={date}
+          title={'Height'}
+          info={'5 ft. 11 in'}
+          iconName={'body-outline'}
+        />
       </ScrollView>
     </SafeAreaView>
   );
@@ -66,6 +78,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: 'white',
+  },
+  cards: {
+    flexDirection: 'column',
   },
   buttonContainer: {
     width: '50%',
