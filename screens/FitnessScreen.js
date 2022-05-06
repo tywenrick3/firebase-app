@@ -54,12 +54,14 @@ const FitnessScreen = () => {
           info={info}
           iconName={'podium-outline'}
         />
+
         <Card
           date={date}
           title={'Body Weight'}
           info={'155 lbs'}
           iconName={'body-outline'}
         />
+
         <Card
           date={date}
           title={'Height'}
@@ -78,10 +80,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: 'white',
-  },
-  cards: {
     flexDirection: 'column',
   },
+  cards: {},
   buttonContainer: {
     width: '50%',
     justifyContent: 'center',
