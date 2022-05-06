@@ -52,7 +52,7 @@ const FitnessScreen = () => {
           date={date}
           title={title}
           info={info}
-          iconName={'podium-outline'}
+          iconName={'barbell-outline'}
         />
 
         <Card
@@ -66,7 +66,14 @@ const FitnessScreen = () => {
           date={date}
           title={'Height'}
           info={'5 ft. 11 in'}
-          iconName={'body-outline'}
+          iconName={'podium-outline'}
+        />
+
+        <Card
+          date={date}
+          title={title}
+          info={'205 lbs'}
+          iconName={'barbell-outline'}
         />
       </ScrollView>
     </SafeAreaView>
