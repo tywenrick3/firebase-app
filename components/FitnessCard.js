@@ -5,8 +5,6 @@ import IonIcon from 'react-native-vector-icons/Ionicons';
 IonIcon.loadFont();
 
 const FitnessCard = ({date, title, info, iconName}) => {
-  // what I want to be passed in
-
   return (
     <View style={styles.cardContainer}>
       <View style={styles.infoContainer}>
@@ -29,7 +27,6 @@ const styles = StyleSheet.create({
     height: 125,
     borderRadius: 25,
     borderColor: '#A0ED7B',
-    backgroundColor: '#FBF6EE',
     borderWidth: 3,
     flexDirection: 'row',
   },
@@ -40,6 +37,7 @@ const styles = StyleSheet.create({
 
   titleText: {
     fontSize: 18,
+    fontWeight: 'bold',
     padding: 10,
     paddingLeft: 20,
   },
