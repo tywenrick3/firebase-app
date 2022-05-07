@@ -4,16 +4,16 @@ import {useState, useEffect} from 'react';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 IonIcon.loadFont();
 
-const FitnessCard = ({date, title, info, iconName}) => {
+const FitnessCard = props => {
   return (
     <View style={styles.cardContainer}>
       <View style={styles.infoContainer}>
-        <Text style={styles.titleText}>{title}</Text>
-        <Text style={styles.dataText}>{info}</Text>
-        <Text style={styles.dateText}>{date}</Text>
+        <Text style={styles.titleText}>{props.title}</Text>
+        <Text style={styles.dataText}>{props.info}</Text>
+        <Text style={styles.dateText}>{props.date}</Text>
       </View>
       <View style={styles.iconContainer}>
-        <IonIcon name={iconName} size={60} color={'#A0ED7B'} />
+        <IonIcon name={props.iconName} size={60} color={'#A0ED7B'} />
       </View>
     </View>
   );

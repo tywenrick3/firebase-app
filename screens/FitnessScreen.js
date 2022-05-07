@@ -16,10 +16,10 @@ IonIcon.loadFont();
 const FitnessScreen = () => {
   const navigation = useNavigation();
 
-  const [cards, setCards] = useState([]);
   const [title, setTitle] = useState('');
   const [info, setInfo] = useState('');
   const [date, setDate] = useState(null);
+  const [iconName, setIconName] = useState('');
 
   useEffect(() => {
     let today = new Date();
@@ -31,9 +31,28 @@ const FitnessScreen = () => {
       today.getDate();
     setDate(date);
     // test info
-    setTitle('Bench Press');
-    setInfo('225 lbs');
   }, []);
+
+  const [cards, setCards] = useState([
+    {
+      date: {date},
+      title: 'Height',
+      info: '5 ft. 11 in',
+      iconName: 'podium-outline',
+    },
+    {
+      date: {date},
+      title: 'Body Weight',
+      info: '155 lbs',
+      iconName: 'body-outline',
+    },
+    {
+      date: {date},
+      title: 'Bench Press',
+      info: '225 lbs',
+      iconName: 'barbell-outline',
+    },
+  ]);
 
   const handleAddFitness = () => {
     console.log('Add Button Pressed');
@@ -45,36 +64,22 @@ const FitnessScreen = () => {
         <IonIcon name={'add-circle-outline'} size={50} color={'#A0ED7B'} />
       </TouchableOpacity>
       <ScrollView style={styles.cards}>
-        {cards.map((card, i) => (
-          <Card />
+        {cards.map((card, index) => (
+          <Card
+            card={card}
+            key={index}
+            date={date}
+            title={title}
+            info={info}
+            iconName={iconName}
+          />
         ))}
-        <Card
+        {/* <Card
           date={date}
           title={title}
           info={info}
           iconName={'barbell-outline'}
-        />
-
-        <Card
-          date={date}
-          title={'Body Weight'}
-          info={'155 lbs'}
-          iconName={'body-outline'}
-        />
-
-        <Card
-          date={date}
-          title={'Height'}
-          info={'5 ft. 11 in'}
-          iconName={'podium-outline'}
-        />
-
-        <Card
-          date={date}
-          title={title}
-          info={'205 lbs'}
-          iconName={'barbell-outline'}
-        />
+        /> */}
       </ScrollView>
     </SafeAreaView>
   );
