@@ -4,6 +4,7 @@ import HomeScreen from '../screens/HomeScreen';
 import FitnessScreen from '../screens/FitnessScreen';
 import ClockScreen from '../screens/ClockScreen';
 import IonIcon from 'react-native-vector-icons/Ionicons';
+import AddUpdate from '../screens/AddUpdate';
 IonIcon.loadFont();
 const Tab = createBottomTabNavigator();
 
@@ -22,6 +23,8 @@ const Tabs = () => {
             iconName = focused ? 'md-analytics' : 'md-analytics';
           } else if (route.name === 'Clock') {
             iconName = focused ? 'md-alarm' : 'md-alarm';
+          } else if (route.name == 'Add') {
+            iconName = focused ? 'add-circle-outline' : 'add-circle-outline';
           }
           return <IonIcon name={iconName} size={size} color={color} />;
         },
@@ -36,6 +39,7 @@ const Tabs = () => {
       })}>
       <Tab.Screen name="Clock" component={ClockScreen} />
       <Tab.Screen name="Fitness" component={FitnessScreen} />
+      <Tab.Screen name="Add" component={AddUpdate} />
       <Tab.Screen name="Home" component={HomeScreen} />
     </Tab.Navigator>
   );

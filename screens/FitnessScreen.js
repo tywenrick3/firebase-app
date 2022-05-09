@@ -33,7 +33,6 @@ const FitnessScreen = () => {
     setTitle('Bench Press');
     setInfo('225 lbs');
     // test info
-    setCards([]);
   }, []);
 
   const [cards, setCards] = useState([
@@ -57,25 +56,25 @@ const FitnessScreen = () => {
     },
   ]);
 
-  const handleAddFitness = () => {
-    console.log('Add Button Pressed');
-    // useEffect(() => {
-    //   const nav = () => {
-    //     if (user) {
-    //       navigation.navigate('Tabs');
-    //     }
-    //   };
-    //   return nav;
-    // }, []);
-  };
+  // const handleAddFitness = () => {
+  //   console.log('Add Button Pressed');
+  //   useEffect(() => {
+  //     const add = () => {
+  //       navigation.navigate('AddUpdate');
+  //     };
+  //     return nav;
+  //   }, []);
+  // };
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity onPress={handleAddFitness} style={styles.button}>
+      {/* <TouchableOpacity
+        onPress={() => navigation.navigate('AddUpdate')}
+        style={styles.button}>
         <IonIcon name={'add-circle-outline'} size={50} color={'#A0ED7B'} />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <ScrollView style={styles.cards}>
-        {cards.map((card, index) => (
+        {/* {cards.map((card, index) => (
           <Card
             card={card}
             key={index}
@@ -84,11 +83,19 @@ const FitnessScreen = () => {
             info={info}
             iconName={iconName}
           />
-        ))}
+        ))} */}
         <Card
+          style={styles.card}
           date={date}
           title={title}
           info={info}
+          iconName={'barbell-outline'}
+        />
+        <Card
+          style={styles.card}
+          date={'2022-5-5'}
+          title={title}
+          info={'200 lbs'}
           iconName={'barbell-outline'}
         />
       </ScrollView>
@@ -105,7 +112,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flexDirection: 'column',
   },
-  cards: {},
+  cards: {
+    padding: 10,
+  },
+  card: {
+    justifyContent: 'space-between',
+    marginBottom: 10,
+  },
   buttonContainer: {
     width: '50%',
     justifyContent: 'center',
