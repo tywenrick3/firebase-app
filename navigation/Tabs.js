@@ -15,7 +15,9 @@ const Tabs = () => {
           let iconName;
           size = 30;
           if (route.name === 'Home') {
-            iconName = focused ? 'home' : 'home';
+            iconName = focused
+              ? 'person-circle-outline'
+              : 'person-circle-outline';
           } else if (route.name === 'Fitness') {
             iconName = focused ? 'md-analytics' : 'md-analytics';
           } else if (route.name === 'Clock') {

@@ -30,7 +30,10 @@ const FitnessScreen = () => {
       '-' +
       today.getDate();
     setDate(date);
+    setTitle('Bench Press');
+    setInfo('225 lbs');
     // test info
+    setCards([]);
   }, []);
 
   const [cards, setCards] = useState([
@@ -56,6 +59,14 @@ const FitnessScreen = () => {
 
   const handleAddFitness = () => {
     console.log('Add Button Pressed');
+    // useEffect(() => {
+    //   const nav = () => {
+    //     if (user) {
+    //       navigation.navigate('Tabs');
+    //     }
+    //   };
+    //   return nav;
+    // }, []);
   };
 
   return (
@@ -74,12 +85,12 @@ const FitnessScreen = () => {
             iconName={iconName}
           />
         ))}
-        {/* <Card
+        <Card
           date={date}
           title={title}
           info={info}
           iconName={'barbell-outline'}
-        /> */}
+        />
       </ScrollView>
     </SafeAreaView>
   );
