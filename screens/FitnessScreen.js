@@ -13,6 +13,8 @@ import {ScrollView} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 IonIcon.loadFont();
 
+// currently working on
+
 const FitnessScreen = () => {
   const navigation = useNavigation();
 
@@ -97,6 +99,34 @@ const FitnessScreen = () => {
           title={title}
           info={'200 lbs'}
           iconName={'barbell-outline'}
+        />
+        <Card
+          style={styles.card}
+          date={'2022-5-3'}
+          title={'New Height'}
+          info={'5 ft 11 inch'}
+          iconName={'podium-outline'}
+        />
+        <Card
+          style={styles.card}
+          date={'2022-5-1'}
+          title={'Barbell Squat'}
+          info={'325 lbs'}
+          iconName={'barbell-outline'}
+        />
+        <Card
+          style={styles.card}
+          date={'2022-4-22'}
+          title={'New Weight'}
+          info={'165 lbs'}
+          iconName={'podium-outline'}
+        />
+        <Card
+          style={styles.card}
+          date={'2022-4-02'}
+          title={'New Weight'}
+          info={'135 lbs'}
+          iconName={'podium-outline'}
         />
       </ScrollView>
     </SafeAreaView>
